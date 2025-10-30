@@ -13,9 +13,9 @@ export default function HeroHome() {
               <a href="#" className="btn-all">
                 Sign-up for Access
               </a>
-              {/* <div className="animation-hero-spline">
+              <div className="animation-hero-spline">
                 <Spline scene="https://prod.spline.design/d8YzOeFHvH42Ip7Z/scene.splinecode" />
-              </div> */}
+              </div>
             </div>
           </div>
           <div className="col-12 col-md-3">

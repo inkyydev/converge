@@ -1,5 +1,6 @@
 import Header from "./scenes/nav/HeaderNav";
 import Homepage from "./scenes/homepage/Homepage";
+import Footer from "./scenes/nav/Footer";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <main>
         <Homepage />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -111,7 +111,9 @@
 
 #faq {
   padding-top: 6.5vw;
-  overflow: hidden;
+  /* overflow: hidden; */
+  position: relative;
+  z-index: 99;
 }
 #faq h2 {
   margin-top: 0.3vw;
@@ -132,24 +134,22 @@ body .accordion-button {
   position: relative;
 }
 .accordion-item:first-of-type::after {
-  width: 200vw;
+  width: 100vw;
   height: 1px;
   content: "";
   position: absolute;
   background: #5c5c5c;
-  left: 50%;
+  left: -67.3%;
   top: 0;
-  transform: translateX(-50%);
 }
 .accordion-item::before {
-  width: 200vw;
+  width: 100vw;
   height: 1px;
   content: "";
   position: absolute;
   background: #5c5c5c;
-  left: 50%;
+  left: -67.3%;
   bottom: 0;
-  transform: translateX(-50%);
 }
 .accordion-body {
   padding: 0 !important;
@@ -301,19 +301,59 @@ body .accordion-button {
 }
 
 @media (max-width: 767px) {
+  .accordion-item:first-of-type::after,
+  .accordion-item::before {
+    left: -20px;
+  }
+  .circle-titles {
+    padding: 0 20px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .heading-fourth {
+    order: 5;
+  }
+  .circle-titles h4 br {
+    display: none;
+  }
+  .circle-titles h4 {
+    font-size: 20px;
+    padding: 23px 0;
+    opacity: 1;
+    border-bottom: 1px solid #464646;
+  }
+  .title-mobile-hidden {
+    display: block;
+    text-align: center;
+  }
   .circle-anim {
     transform: translateX(-50%);
+    left: 50%;
     margin-top: 18px;
     width: 300px;
     height: 300px;
+    -webkit-mask: conic-gradient(
+      from 0deg,
+      black 0deg,
+      black 0deg,
+      transparent 0deg
+    );
+    mask: conic-gradient(from 0deg, black 0deg, black 0deg, transparent 0deg);
   }
   .circle-inner img {
     width: 120px;
   }
+  .title-mobile-hidden p {
+    max-width: 308px;
+    margin: 0 auto;
+  }
   .circle-inner {
     width: 191px;
     height: 191px;
-    margin-top: -42px;
+    margin-top: 70px;
+    top: 0;
+    transform: translate(-50%, 0%);
   }
   .circle-border img {
     width: 330px;
@@ -372,7 +412,7 @@ body .accordion-button {
     display: none !important;
   }
   #faq {
-    padding-top: 44px;
+    padding-top: 84px;
   }
   #faq h2 {
     text-align: center;
@@ -382,10 +422,10 @@ body .accordion-button {
     margin-top: 70px;
   }
   .lottie-anim div {
-    transform: scale(3) scaleX(-1) !important;
+    transform: scale(2.5) scaleX(-1) !important;
   }
   #hero {
-    padding: 110px 0 50px;
+    padding: 110px 0 0px;
   }
   #hero h1 {
     margin-bottom: 37px;
@@ -399,7 +439,7 @@ body .accordion-button {
     align-items: center;
   }
   #core_features {
-    padding: 32px 0 0;
+    padding: 50px 0 0;
   }
   #core_features h2 {
     text-align: center;

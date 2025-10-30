@@ -16,10 +16,9 @@ export default function UnifiedTrading() {
     const heading3 = document.querySelector(".heading-third");
     const heading4 = document.querySelector(".heading-fourth");
 
-    const isDesktop = window.innerWidth > 991;
+    const isDesktop = window.innerWidth > 767;
 
     if (isDesktop) {
-      // -------- 💻 DESKTOP: SCRUB + HEADINGS --------
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".scroll-section",
@@ -29,7 +28,6 @@ export default function UnifiedTrading() {
         },
       });
 
-      // aktivacija headinga dok se skrola
       ScrollTrigger.create({
         trigger: ".scroll-section",
         start: "top top",
@@ -44,7 +42,6 @@ export default function UnifiedTrading() {
         },
       });
 
-      // maska – conic reveal sa scroll scrub-om
       tl.fromTo(
         el,
         {
@@ -62,12 +59,28 @@ export default function UnifiedTrading() {
           duration: 1,
         }
       );
-    } else {
-      // -------- 📱 MOBILE: SAMO MASK ANIMACIJA (jednom kad uđe u viewport) --------
+    }
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
+  useEffect(() => {
+    const el = document.querySelector(".circle-anim");
+
+    gsap.set(el, {
+      webkitMaskImage:
+        "conic-gradient(from 0deg, transparent 0deg, transparent 0deg, black 0deg)",
+      maskImage:
+        "conic-gradient(from 0deg, transparent 0deg, transparent 0deg, black 0deg)",
+    });
+
+    const isMobile = window.innerWidth < 767;
+    if (isMobile)
       ScrollTrigger.create({
         trigger: ".scroll-section",
-        start: "top 80%",
-        markers: true,
+        start: "top center",
+        markers: false,
         once: true,
         onEnter: () => {
           gsap.fromTo(
@@ -83,13 +96,12 @@ export default function UnifiedTrading() {
                 "conic-gradient(from 0deg, transparent 0deg, transparent 360deg, black 360deg)",
               maskImage:
                 "conic-gradient(from 0deg, transparent 0deg, transparent 360deg, black 360deg)",
-              duration: 1.4,
+              duration: 2,
               ease: "power2.out",
             }
           );
         },
       });
-    }
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
