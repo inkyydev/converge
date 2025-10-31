@@ -306,6 +306,9 @@ body .accordion-button {
 }
 
 @media (max-width: 767px) {
+  .animation-hero-spline {
+    pointer-events: none;
+  }
   .scroll-down {
     width: 50px;
     margin: -30px auto 50px;
