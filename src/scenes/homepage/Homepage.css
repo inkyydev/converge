@@ -5,9 +5,13 @@
   padding-bottom: 12.34vw;
   overflow: hidden;
 }
-#hero .container {
-  /* position: relative; */
-  /* z-index: 9; */
+.scroll-down {
+  width: 2.6vw;
+  position: absolute;
+  bottom: 4vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
 }
 .animation-hero-spline {
   position: absolute;
@@ -17,7 +21,6 @@
   left: 0;
 }
 #hero h1 {
-  pointer-events: none;
   mix-blend-mode: exclusion;
   position: relative;
   z-index: 1;
@@ -26,7 +29,9 @@
   position: relative;
   z-index: 9;
 }
-
+.features-single-pro-grade h3 {
+  max-width: 16.41vw;
+}
 .hero-text h1 {
   margin-bottom: 2.18vw;
 }
@@ -301,6 +306,16 @@ body .accordion-button {
 }
 
 @media (max-width: 767px) {
+  .scroll-down {
+    width: 50px;
+    margin: -30px auto 50px;
+    position: static;
+    text-align: center;
+    transform: none;
+  }
+  .features-single-pro-grade h3 {
+    max-width: 100%;
+  }
   .accordion-item:first-of-type::after,
   .accordion-item::before {
     left: -20px;
@@ -419,10 +434,10 @@ body .accordion-button {
     margin-bottom: 12px;
   }
   .lottie-anim {
-    margin-top: 70px;
+    margin-top: 0px;
   }
   .lottie-anim div {
-    transform: scale(2.5) scaleX(-1) !important;
+    transform: scale(2) scaleX(-1) !important;
   }
   #hero {
     padding: 110px 0 0px;

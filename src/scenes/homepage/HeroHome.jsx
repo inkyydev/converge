@@ -1,6 +1,7 @@
-import Spline from "@splinetool/react-spline";
 import Lottie from "lottie-react";
 import heroLottie from "../../assets/hero-anim.json";
+import scrollArrow from "../../assets/scroll-arrow.json";
+import SplinePart from "../../compontents/SplinePart";
 
 export default function HeroHome() {
   return (
@@ -14,7 +15,7 @@ export default function HeroHome() {
                 Sign-up for Access
               </a>
               <div className="animation-hero-spline">
-                <Spline scene="https://prod.spline.design/d8YzOeFHvH42Ip7Z/scene.splinecode" />
+                <SplinePart />
               </div>
             </div>
           </div>
@@ -24,6 +25,11 @@ export default function HeroHome() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="scroll-down">
+        <a href="#core_features">
+          <Lottie animationData={scrollArrow} loop={true} autoplay={true} />
+        </a>
       </div>
     </section>
   );

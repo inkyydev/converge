@@ -46,7 +46,7 @@ export default function CoreFeatures() {
               </div>
             </div>
             <div className="col-12 col-md-4">
-              <div className="features-single">
+              <div className="features-single features-single-pro-grade">
                 <div className="feature-icon">
                   <img src={proIcon} alt="chain" />
                   <img src={proIconLinear} alt="chain" />
@@ -73,9 +73,7 @@ export default function CoreFeatures() {
                   <img src={unifiedIcon} alt="chain" />
                   <img src={unifiedIconLinear} alt="chain" />
                 </div>
-                <h3>
-                  Unified Portfolio <br /> Management
-                </h3>
+                <h3>Unified Portfolio Management</h3>
               </div>
             </div>
           </div>

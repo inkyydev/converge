@@ -1,4 +1,4 @@
-import Spline from "@splinetool/react-spline";
+import SplinePart from "../../compontents/SplinePart";
 
 import footerLogo from "../../assets/footer-logo.png";
 import gitIcon from "../../assets/git-icon.svg";
@@ -13,7 +13,7 @@ export default function Footer() {
           <img src={footerLogo} alt="logo" />
 
           <div className="footer-spline">
-            <Spline scene="https://prod.spline.design/d8YzOeFHvH42Ip7Z/scene.splinecode" />
+            <SplinePart />
           </div>
         </div>
       </div>
