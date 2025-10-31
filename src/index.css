@@ -13,11 +13,6 @@
   background: #fff;
   color: #000;
 }
-
-html {
-  scroll-behavior: smooth !important;
-}
-
 img {
   max-width: 100%;
   -webkit-user-select: none;
@@ -173,6 +168,8 @@ footer {
 }
 
 .reveal-word {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
   display: inline-block;
   transform: translateY(100%);
   opacity: 0;

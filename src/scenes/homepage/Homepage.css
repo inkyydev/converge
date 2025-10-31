@@ -14,11 +14,12 @@
   z-index: 9;
 }
 .animation-hero-spline {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
 #hero h1 {
   mix-blend-mode: exclusion;
@@ -44,6 +45,9 @@
 #core_features {
   padding-top: 3.5vw;
   padding-bottom: 7.2vw;
+  background-color: #000;
+  position: relative;
+  z-index: 9;
 }
 .features-single {
   border: 1px solid #464646;
@@ -119,9 +123,10 @@
   /* overflow: hidden; */
   position: relative;
   z-index: 99;
+  background: #000;
 }
 #faq h2 {
-  margin-top: 0.3vw;
+  margin-top: 1vw;
 }
 body .accordion-button {
   background: none !important;
@@ -207,6 +212,9 @@ body .accordion-button {
 }
 .scroll-section {
   min-height: 250vh;
+  position: relative;
+  z-index: 99;
+  background: #000;
 }
 .circle-wrapper {
   position: sticky;
@@ -293,11 +301,17 @@ body .accordion-button {
 }
 .circle-titles h4:nth-child(3) {
   bottom: 13.05vw;
-  right: 14vw;
+  right: 10.8vw;
 }
 .circle-titles h4:nth-child(4) {
   bottom: 13.05vw;
   left: 12.86vw;
+}
+.heading-second {
+  max-width: 17vw;
+}
+.heading-first {
+  max-width: 15vw;
 }
 @media (max-width: 1024px) {
   #hero {
@@ -306,6 +320,10 @@ body .accordion-button {
 }
 
 @media (max-width: 767px) {
+  .heading-second,
+  .heading-first {
+    max-width: 100%;
+  }
   .animation-hero-spline {
     pointer-events: none;
   }

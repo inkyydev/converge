@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,35 +10,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.15,
-      smooth: true,
-      wheelMultiplier: 1.1,
-    });
-
-    lenis.on("scroll", ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
-
     const headings = document.querySelectorAll("h1, h2, h3, h4");
 
     headings.forEach((heading) => {
-      const text = heading.textContent.trim();
-      heading.textContent = "";
+      const fragment = document.createDocumentFragment();
 
-      const words = text.split(" ");
-      words.forEach((word) => {
-        const outer = document.createElement("span");
-        outer.classList.add("reveal-line");
-        const inner = document.createElement("span");
-        inner.classList.add("reveal-word");
-        inner.textContent = word + " ";
-        outer.appendChild(inner);
-        heading.appendChild(outer);
+      heading.childNodes.forEach((node) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const words = node.textContent.trim().split(" ");
+          words.forEach((word, index) => {
+            if (!word) return;
+
+            const outer = document.createElement("span");
+            outer.classList.add("reveal-line");
+
+            const inner = document.createElement("span");
+            inner.classList.add("reveal-word");
+            inner.textContent = word;
+
+            outer.appendChild(inner);
+            fragment.appendChild(outer);
+
+            if (index !== words.length - 1) fragment.append(" ");
+          });
+        } else {
+          fragment.appendChild(node.cloneNode(true));
+        }
       });
+
+      heading.innerHTML = "";
+      heading.appendChild(fragment);
 
       gsap.fromTo(
         heading.querySelectorAll(".reveal-word"),
@@ -63,9 +63,7 @@ function App() {
     });
 
     return () => {
-      lenis.destroy();
       ScrollTrigger.getAll().forEach((t) => t.kill());
-      gsap.ticker.remove(lenis.raf);
     };
   }, []);
 
