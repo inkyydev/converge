@@ -1,5 +1,6 @@
 import logo from "../../assets/logo.png";
 import gitIcon from "../../assets/git-icon.svg";
+import dicordIcon from "../../assets/discord-icon.svg";
 import secondIcon from "../../assets/second-icon.svg";
 import xIcon from "../../assets/x-icon.svg";
 
@@ -20,17 +21,21 @@ export default function HeaderNav() {
               <div className="main-nav-items">
                 <div className="main-nav-items__social">
                   <a href="#" target="_blank">
-                    <img src={gitIcon} alt="git" />
+                    <img src={dicordIcon} alt="dicord" />
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="https://docs.converge.market/" target="_blank">
                     <img src={secondIcon} alt="git" />
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="https://x.com/convergemarkets" target="_blank">
                     <img src={xIcon} alt="x" />
                   </a>
                 </div>
                 <div className="main-nav-items__btn">
-                  <a href="#" className="btn-all">
+                  <a
+                    href="https://tally.so/r/31jLA1"
+                    target="_blank"
+                    className="btn-all"
+                  >
                     Sign-up for Access
                   </a>
                 </div>

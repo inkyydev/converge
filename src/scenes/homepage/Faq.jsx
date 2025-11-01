@@ -7,7 +7,7 @@ export default function Faq() {
         <div className="row">
           <div className="col-12 col-md-4">
             <div className="faq-heading">
-              <h2>Faq</h2>
+              <h2>FAQ</h2>
             </div>
           </div>
           <div className="col-12 col-md-8">
@@ -38,13 +38,11 @@ export default function Faq() {
                   >
                     <div class="accordion-body">
                       <p>
-                        No, Converge does not hold custody of your funds. Our
-                        platform is custody-free, meaning you retain full
-                        control over your assets at all times. We provide
-                        professional-grade tools and seamless access to multiple
-                        markets without taking possession of your funds,
-                        ensuring security and transparency throughout your
-                        trading experience.
+                        Converge is the first aggregator and trading terminal
+                        for prediction markets and betting platforms. Compare
+                        real-time odds across venues, trade with zero added
+                        fees, and use professional tools like filters, charts,
+                        positions tracking, arbitrage insights and much more.
                       </p>
                     </div>
                   </div>
@@ -103,7 +101,7 @@ export default function Faq() {
                       aria-expanded="false"
                       aria-controls="collapseThree"
                     >
-                      Which markets can i trade on Converge?
+                      Which markets can I trade on Converge
                     </button>
                   </h3>
                   <div
@@ -114,13 +112,8 @@ export default function Faq() {
                   >
                     <div class="accordion-body">
                       <p>
-                        No, Converge does not hold custody of your funds. Our
-                        platform is custody-free, meaning you retain full
-                        control over your assets at all times. We provide
-                        professional-grade tools and seamless access to multiple
-                        markets without taking possession of your funds,
-                        ensuring security and transparency throughout your
-                        trading experience.
+                        Converge will be integrated with Polymarket, Kalshi and
+                        Limitless to start.
                       </p>
                     </div>
                   </div>

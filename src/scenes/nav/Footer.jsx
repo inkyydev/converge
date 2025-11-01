@@ -1,9 +1,8 @@
-// import Spline from "@splinetool/react-spline";
-
 import footerLogo from "../../assets/footer-logo.png";
 import gitIcon from "../../assets/git-icon.svg";
 import secondIcon from "../../assets/second-icon.svg";
 import xIcon from "../../assets/x-icon.svg";
+import dicordIcon from "../../assets/discord-icon.svg";
 
 export default function Footer() {
   return (
@@ -11,10 +10,6 @@ export default function Footer() {
       <div className="container">
         <div className="footer-logo">
           <img src={footerLogo} alt="logo" />
-
-          {/* <div className="footer-spline">
-            <Spline scene="https://prod.spline.design/d8YzOeFHvH42Ip7Z/scene.splinecode" />
-          </div> */}
         </div>
       </div>
       <div className="footer-copy-wrapper">
@@ -28,13 +23,13 @@ export default function Footer() {
             <div className="col-12 col-md-6">
               <div className="footer-social">
                 <a href="#" target="_blank">
-                  <img src={gitIcon} alt="logo" />
+                  <img src={dicordIcon} alt="discord" />
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://docs.converge.market/" target="_blank">
                   <img src={secondIcon} alt="logo" />
                 </a>
-                <a href="#" target="_blank">
-                  <img src={xIcon} alt="logo" />
+                <a href="https://x.com/convergemarkets" target="_blank">
+                  <img src={xIcon} alt="x" />
                 </a>
               </div>
             </div>

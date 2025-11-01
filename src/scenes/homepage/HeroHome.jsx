@@ -11,7 +11,11 @@ export default function HeroHome() {
           <div className="col-12 col-md-9">
             <div className="hero-text">
               <h1>One Platform Unifying All Odds.</h1>
-              <a href="#" className="btn-all">
+              <a
+                href="https://tally.so/r/31jLA1"
+                target="_blank"
+                className="btn-all"
+              >
                 Sign-up for Access
               </a>
               <div className="animation-hero-spline">
